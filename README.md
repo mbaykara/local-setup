@@ -3,7 +3,7 @@
 1. Clone repo to your home directory
 
 ```bash
-git clone https://github.com/mbaykara/local-setup.git
+git clone https://github.com/mbaykara/local-setup.git ~/local-setup
 ```
 
 2. Append following line to `~/.bash_profile`
