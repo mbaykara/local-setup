@@ -1,7 +1,14 @@
 # local-setup
 
-1. Clone repo to your home directory
+Customize your terminal promt.
 
+0. Create `~/.bash_profile` if it doesn't exist.
+   
+```bash
+touch ~/.bash_profile
+```
+   
+1. Clone repo to your home directory
 ```bash
 git clone https://github.com/mbaykara/local-setup.git ~/local-setup
 ```
@@ -17,7 +24,7 @@ fi
 Your promt format:
 
 ```
-<username><current_directory><curren_kubernetes_cluster><current_namespace><git_branch>
+<username><current__working_dir><current_k8s_cluster><current_namespace><git_branch>
 ```
 
 Your terminal promp will look as:
