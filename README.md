@@ -2,22 +2,20 @@
 
 Customize your terminal promt.
 
-0. Create `~/.bash_profile` if it doesn't exist.
+1. Create `~/.bash_profile` if it doesn't exist.
 
 ```bash
 touch ~/.bash_profile
 ```
 
-1. Clone repo to your home directory
-
-```bash
-git clone https://github.com/mbaykara/local-setup.git ~/.local-setup
-```
-
 2. Append following line to `~/.bash_profile`
 
 ```bash
-if [ -d ~/local-setup ]; then
+if [ -d ~/.local-setup ]; then
+   source ~/.local-setup/.custom_bash
+else
+   echo "No .local-setup directory found, cloning it from GitHub..."
+   git clone git clone https://github.com/mbaykara/local-setup.git ~/.local-setup
    source ~/.local-setup/.custom_bash
 fi
 ```
