@@ -15,7 +15,7 @@ if [ -d ~/.local-setup ]; then
    source ~/.local-setup/.custom_bash
 else
    echo "No .local-setup directory found, cloning it from GitHub..."
-   git clone git clone https://github.com/mbaykara/local-setup.git ~/.local-setup
+   git clone https://github.com/mbaykara/local-setup.git ~/.local-setup
    source ~/.local-setup/.custom_bash
 fi
 ```
