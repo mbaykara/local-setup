@@ -17,7 +17,7 @@ git clone https://github.com/mbaykara/local-setup.git ~/.local-setup
 2. Append following line to `~/.bash_profile`
 
 ```bash
-if [ -d ~/local-setup ]; then
+if [ -d ~/.local-setup ]; then
    source ~/.local-setup/.custom_bash
 fi
 ```
