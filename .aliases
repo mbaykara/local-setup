@@ -1,3 +1,4 @@
+alias kubectl='kubecolor'
 alias events='kubectl get events --sort-by=.lastTimestamp'
 alias kexec='kubectl exec -it curl  -- /bin/sh'
 alias kurl='kubectl run -it curl  --image=curlimages/curl -- /bin/sh'
