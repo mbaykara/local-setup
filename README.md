@@ -11,12 +11,12 @@ touch ~/.bash_profile
 2. Append following line to `~/.bash_profile`
 
 ```bash
-if [ -d ~/.local-setup ]; then
-   source ~/.local-setup/.custom_bash
+if [ -d ~/.local-terminal ]; then
+   source ~/.local-terminal/.custom_bash
 else
-   echo "No .local-setup directory found, cloning it from GitHub..."
-   git clone https://github.com/mbaykara/local-setup.git ~/.local-setup
-   source ~/.local-setup/.custom_bash
+   echo "No .local-terminal directory found, cloning it from GitHub..."
+   git clone https://github.com/mbaykara/local-terminal.git ~/.local-terminal
+   source ~/.local-terminal/.custom_bash
 fi
 ```
 
