@@ -1,4 +1,7 @@
+#My custom swiss army knife image for debugging and troubleshooting
 FROM alpine:latest
+
+LABEL maintainer="Mehmet Ali Baykara"
 
 # Install necessary packages
 RUN apk update && \
