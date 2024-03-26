@@ -1,3 +1,4 @@
+alias ls='ls -G'
 alias kubectl='kubecolor'
 alias events='kubectl get events --sort-by=.lastTimestamp'
 alias kexec='kubectl exec -it curl  -- /bin/sh'
@@ -7,7 +8,7 @@ alias ns='kubens'
 alias cc='kubectx'
 alias trigger_ci='git empty && git push'
 alias ksql='kubectl run my-shell --rm -i --tty --image arey/mysql-client --command sh'
-alias kim='kubectl get pods --namespace kube-system -o jsonpath="{.items[*].spec.containers[*].image}\n"'
+alias kim="kubectl get pods -o jsonpath="{.items[*].spec.containers[*].image}" | tr ' ' '\n'"
 alias tf='terraform'
 alias rg='az group create --name deleteme --location westeurope'
 alias akscreate='az aks create -g deleteme -n deleteme --enable-managed-identity --node-count 1  --generate-ssh-keys'
