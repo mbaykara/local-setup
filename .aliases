@@ -13,3 +13,4 @@ alias kim="kubectl get pods -o jsonpath="{.items[*].spec.containers[*].image}" |
 alias tf='terraform'
 alias rg='az group create --name deleteme --location westeurope'
 alias akscreate='az aks create -g deleteme -n deleteme --enable-managed-identity --node-count 1  --generate-ssh-keys'
+alias kdebug='kubectl debug node/$NODE_NAME -it --image=alpine -- sh'
