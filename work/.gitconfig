@@ -1,0 +1,6 @@
+[user]
+    name = Mehmet Ali Baykara
+    email = mehmet.baykara@sva.de
+
+[core]
+    sshCommand = ssh -i ~/.ssh/work 
