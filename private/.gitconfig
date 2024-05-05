@@ -1,0 +1,6 @@
+[user]
+    name = Mehmet Ali Baykara
+    email = mab.baykara@gmail.com
+
+[core]
+    sshCommand = ssh -i ~/.ssh/private 
