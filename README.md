@@ -19,6 +19,8 @@ else
    source ~/.local-terminal/.custom_bash
    echo "Copying git config..."
    cp ~/.local-terminal/.gitconfig ~/.gitconfig
+   mv ~/.local-terminal/work ~/work
+   mv ~/~/.local-terminal/private ~/private
 fi
 ```
 
