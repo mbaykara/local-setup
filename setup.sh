@@ -1,12 +1,14 @@
 #!/bin/env bash
 
-# Function to check if directory exists and copy contents if it does
-copy_directory_if_exists() {
+# Function to copy directory if it doesn't exist
+copy_directory_if_not_exists() {
     local source_dir="$1"
     local dest_dir="$2"
-    if [ -d "$source_dir" ]; then
+    if [ ! -d "$dest_dir" ]; then
         echo "Copying contents of $source_dir to $dest_dir..."
-        cp -r "$source_dir"/* "$dest_dir"
+        cp -r "$source_dir" "$dest_dir"
+    else
+        echo "Directory $dest_dir already exists, skipping..."
     fi
 }
 
@@ -18,7 +20,8 @@ else
     source ~/.local-terminal/.custom_bash
     echo "Copying git config..."
     cp ~/.local-terminal/.gitconfig ~/.gitconfig
-    echo "Checking and copying work and private directories..."
-    copy_directory_if_exists ~/.local-terminal/work ~/work
-    copy_directory_if_exists ~/.local-terminal/private ~/private
 fi
+
+# Copy work and private directories if they don't exist
+copy_directory_if_not_exists ~/.local-terminal/work ~/work
+copy_directory_if_not_exists ~/.local-terminal/private ~/private
