@@ -12,14 +12,16 @@ This repository allow you to setup your local environment in 1 minute.
 
 :white_check_mark: Customize your terminal prompt.
 
-## Invoke the setup script, it will set your environment up and running in few seconds!
+## Usage
+1. Fork the project and make changes to `work/.gitconfig` and `private/.gitconfig` by adjusting your email and name.
 
+2. Invoke the script
+   
 ```bash
 curl -fsSL https://raw.githubusercontent.com/mbaykara/.local-terminal/main/setup.sh | bash
 ```
 
 Done!
-
 
 Your terminal promp will look as:
 ```
