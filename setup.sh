@@ -24,6 +24,37 @@ copy_directory_contents_if_not_exist() {
     fi
 }
 
+#Generate ssh-key pairs
+WORK_SSH_DIR="$HOME/.ssh/work"
+PRIVATE_SSH_DIR="$HOME/.ssh/private"
+WORK_KEY_NAME="id_ed25519_work"
+PRIVATE_KEY_NAME="id_ed25519_private"
+generate_key_pair() {
+    local key_dir=$1
+    local key_name=$2
+    if [ ! -d "$key_dir" ]; then
+        mkdir -p "$key_dir"
+    fi
+    if [ ! -f "$key_dir/$key_name" ]; then
+        ssh-keygen -t ed25519 -N "" -f "$key_dir/$key_name"
+        echo "SSH key pair generated in $key_dir."
+        ssh-add "$key_dir/$key_name"
+        echo "SSH key added to SSH agent."
+    else
+        echo "SSH key pair already exists in $key_dir."
+        ssh-add -l | grep "$key_dir/$key_name" > /dev/null
+        if [ $? -ne 0 ]; then
+            ssh-add "$key_dir/$key_name"
+            echo "SSH key added to SSH agent."
+        else
+            echo "SSH key already added to SSH agent."
+        fi
+    fi
+}
+
+# Generate SSH key pairs
+generate_key_pair "$WORK_SSH_DIR" "$WORK_KEY_NAME"
+generate_key_pair "$PRIVATE_SSH_DIR" "$PRIVATE_KEY_NAME"
 # Check if .local-terminal directory exists
 if [ -d ~/.local-terminal ]; then
     append_to_bash_profile ~/.bash_profile "source ~/.local-terminal/.custom_bash"
