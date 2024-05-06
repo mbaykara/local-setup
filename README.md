@@ -12,7 +12,7 @@ This repository allow you to setup your local environment in 1 minute.
 
 :white_check_mark: Customize your terminal prompt.
 
-## Invoke the init.sh script, it will set your environment up and running!
+## Invoke the setup script, it will set your environment up and running in few seconds!
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/mbaykara/.local-terminal/main/setup.sh | bash
