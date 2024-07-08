@@ -69,3 +69,10 @@ fi
 # Copy work and private directories if they don't exist
 copy_directory_contents_if_not_exist ~/.local-terminal/work ~/work
 copy_directory_contents_if_not_exist ~/.local-terminal/private ~/private
+# Iterate all private keys and add to SSH agent
+for private_key in $(find ~/.ssh -type f ! -name "*.pub"); do
+    if [ -f "$private_key" ]; then
+        ssh-add "$private_key"
+        echo "Added $private_key to SSH agent."
+    fi
+done
