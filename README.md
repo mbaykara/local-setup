@@ -15,7 +15,7 @@ This repository allow you to setup your local environment in 1 minute.
 ## Usage
 1. Fork the project and make changes to `work/.gitconfig` and `private/.gitconfig` by adjusting your email and name.
 
-2. Invoke the script
+2. Modify link and invoke the script
    
 ```bash
 curl -fsSL https://raw.githubusercontent.com/mbaykara/.local-terminal/main/setup.sh | bash
