@@ -1,6 +1,6 @@
 # .local-setup :rocket: :trident:
 
-This repository allow you to setup your local environment in 1 minute.
+This repository allow you to setup your local environment in a minute.
 
 
 ## Features
