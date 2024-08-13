@@ -22,7 +22,7 @@ install_tools() {
                 ;;
             fluxctl)
                 echo "Installing fluxctl..."
-                brew install flux --cask
+                brew install fluxcd/tap/flux
                 ;;
             k9s)
                 echo "Installing k9s..."
