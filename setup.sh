@@ -1,4 +1,46 @@
-#!/bin/env bash
+#!/usr/bin/env bash
+
+TOOL_LIST="kubectl kubectx helm fluxctl k9s fzf"
+# Function to install tools
+install_tools() {
+    local tool_list="$1"
+    for tool in $tool_list; do
+        if ! command -v "$tool" &> /dev/null; then
+            echo "Installing $tool..."
+            case "$tool" in
+            kubectl)
+                echo "Installing kubectl..."
+                brew install kubectl
+                ;;
+            kubectx)
+                echo "Installing kubectx..."
+                brew install kubectx
+                ;;
+            helm)
+                echo "Installing helm..."
+                brew install helm
+                ;;
+            fluxctl)
+                echo "Installing fluxctl..."
+                brew install flux
+                ;;
+            k9s)
+                echo "Installing k9s..."
+                brew install k9s
+                ;;
+            fzf)
+                echo "Installing fzf..."
+                brew install fzf
+                ;;
+            *)
+                echo "Unknown tool: $tool"
+                ;;
+            esac
+        else
+            echo "$tool is already installed, skipping..."
+        fi
+    done
+}
 
 # Function to append sourcing command to .bash_profile if it's not already there
 append_to_bash_profile() {
@@ -52,6 +94,9 @@ generate_key_pair() {
     fi
 }
 
+
+# Install tools
+install_tools "$TOOL_LIST"
 # Generate SSH key pairs
 generate_key_pair "$WORK_SSH_DIR" "$WORK_KEY_NAME"
 generate_key_pair "$PRIVATE_SSH_DIR" "$PRIVATE_KEY_NAME"
