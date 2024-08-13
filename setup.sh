@@ -22,7 +22,7 @@ install_tools() {
                 ;;
             fluxctl)
                 echo "Installing fluxctl..."
-                brew install flux
+                brew install flux --cask
                 ;;
             k9s)
                 echo "Installing k9s..."
@@ -71,6 +71,7 @@ WORK_SSH_DIR="$HOME/.ssh/work"
 PRIVATE_SSH_DIR="$HOME/.ssh/private"
 WORK_KEY_NAME="id_ed25519_work"
 PRIVATE_KEY_NAME="id_ed25519_private"
+DIR_PERMISSIONS=700
 generate_key_pair() {
     local key_dir=$1
     local key_name=$2
@@ -120,4 +121,5 @@ for private_key in $(find ~/.ssh -type f ! -name "*.pub"); do
         ssh-add "$private_key"
         echo "Added $private_key to SSH agent."
     fi
+    chmod -R $DIR_PERMISSIONS ~/.ssh
 done
