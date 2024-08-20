@@ -50,6 +50,23 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 [[ -f ${SCRIPT_DIR}/.git-completion.bash ]] && source ${SCRIPT_DIR}/.git-completion.bash
 # Sourcing kube-ps1 script if it exists
 [[ -f ${SCRIPT_DIR}/.kube-ps1.sh ]] && source ${SCRIPT_DIR}/.kube-ps1.sh
+
+#########BASH HISTORY SETTINGS#########
+#increase the history size
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+#avoid duplicates
+export HISTCONTROL=ignoredups:erasedups
+#ignore certain commands
+export HISTIGNORE="ls:ll:cd:pwd:clear"
+#When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+#immediately write to the history file, each command
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -n"
+#increase security by setting the history file to read-only
+
+
+#########BASH HISTORY SETTINGS#########
 # Sourcing aliases
 source ${SCRIPT_DIR}/.aliases
 complete -o default -F __start_kubectl k
