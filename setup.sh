@@ -32,6 +32,14 @@ install_tools() {
                 echo "Installing fzf..."
                 brew install fzf
                 ;;
+            mimirtool)
+              echo "Installing mimirtool..."
+              brew install mimirtool
+              ;;
+            alloy)
+              echo "Installing alloy..."
+              brew install alloy
+              ;;
             *)
                 echo "Unknown tool: $tool"
                 ;;
@@ -96,8 +104,22 @@ generate_key_pair() {
 }
 
 
+
+
 # Install tools
-install_tools "$TOOL_LIST"
+if [[ "$(uname)" == "Darwin" ]]; then
+    echo "This is macOS. Installing tools via brew"
+    if command -v brew >/dev/null 2>&1; then
+        echo "Homebrew is installed."
+    else
+        echo "Homebrew is not installed"
+        exit 11
+    fi
+    install_tools "$TOOL_LIST"
+else
+    echo "This is not macOS. Tools will not be installed."
+fi
+
 # Generate SSH key pairs
 generate_key_pair "$WORK_SSH_DIR" "$WORK_KEY_NAME"
 generate_key_pair "$PRIVATE_SSH_DIR" "$PRIVATE_KEY_NAME"
