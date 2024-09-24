@@ -1,4 +1,3 @@
-alias ls="ls -lG"
 alias kubectl='kubecolor'
 alias events='kubectl get events --sort-by=.lastTimestamp'
 alias kexec='kubectl exec -it shooter  -- /bin/sh'
