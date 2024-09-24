@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TOOL_LIST="kubectl kubectx helm fluxctl k9s fzf"
+TOOL_LIST="kubectl kubectx helm fluxcd/tap/flux k9s fzf mimirtool alloy"
 # Function to install tools
 install_tools() {
     local tool_list="$1"
