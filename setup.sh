@@ -13,7 +13,8 @@ TOOL_LIST="kubectl \
           azure-cli \
           awscli \
           yq \
-          jq"
+          jq \
+          bash-git-prompt"
 # Function to install tools
 install_tools() {
     local tool_list="$1"
