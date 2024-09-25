@@ -7,43 +7,7 @@ install_tools() {
     for tool in $tool_list; do
         if ! command -v "$tool" &> /dev/null; then
             echo "Installing $tool..."
-            case "$tool" in
-            kubectl)
-                echo "Installing kubectl..."
-                brew install kubectl
-                ;;
-            kubectx)
-                echo "Installing kubectx..."
-                brew install kubectx
-                ;;
-            helm)
-                echo "Installing helm..."
-                brew install helm
-                ;;
-            fluxctl)
-                echo "Installing fluxctl..."
-                brew install fluxcd/tap/flux
-                ;;
-            k9s)
-                echo "Installing k9s..."
-                brew install derailed/k9s/k9s
-                ;;
-            fzf)
-                echo "Installing fzf..."
-                brew install fzf
-                ;;
-            mimirtool)
-              echo "Installing mimirtool..."
-              brew install mimirtool
-              ;;
-            alloy)
-              echo "Installing alloy..."
-              brew install alloy
-              ;;
-            *)
-                echo "Unknown tool: $tool"
-                ;;
-            esac
+            brew install $tool
         else
             echo "$tool is already installed, skipping..."
         fi
