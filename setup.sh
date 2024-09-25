@@ -2,6 +2,7 @@
 
 TOOL_LIST="kubectl \
           kubectx \
+          kube-ps1 \
           helm \
           fluxcd/tap/flux \
           k9s \
