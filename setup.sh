@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TOOL_LIST="kubectl kubectx helm fluxcd/tap/flux k9s fzf mimirtool alloy"
+TOOL_LIST="kubectl kubectx helm fluxcd/tap/flux k9s fzf mimirtool alloy kubecolor"
 # Function to install tools
 install_tools() {
     local tool_list="$1"
@@ -26,7 +26,7 @@ install_tools() {
                 ;;
             k9s)
                 echo "Installing k9s..."
-                brew install k9s
+                brew install derailed/k9s/k9s
                 ;;
             fzf)
                 echo "Installing fzf..."
