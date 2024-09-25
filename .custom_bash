@@ -46,19 +46,13 @@ function parse_git_dirty {
 }
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-# Sourcing git completion script if it exists
-if [ -f "/opt/homebrew/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-    __GIT_PROMPT_DIR="/opt/homebrew/opt/bash-git-prompt/share"
-    source "/opt/homebrew/opt/bash-git-prompt/share/gitprompt.sh"
-  fi
-
 # Sourcing kube-ps1 script if it exists
 if [ -f "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh" ]; then
     source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
   fi
 	
 if [ -f "~/.git-completion.bash" ]; then
-		source  "~/.git-completion.bash"
+    source  "~/.git-completion.bash"
 fi
 
 #########BASH HISTORY SETTINGS#########
