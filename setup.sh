@@ -82,7 +82,8 @@ generate_key_pair() {
 }
 
 
-
+## Download git completion raw file
+curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 
 # Install tools
 if [[ "$(uname)" == "Darwin" ]]; then
