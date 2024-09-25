@@ -107,7 +107,7 @@ if [ -d ~/.local-terminal ]; then
 else
     echo "No .local-terminal directory found, cloning it from GitHub..."
     git clone https://github.com/mbaykara/.local-terminal.git ~/.local-terminal
-    append_to_bash_profile ~/.bash_profile "source ~/.local-terminal/.custom_bash"
+    append_to_bash_profile ~/.bash_profile "source ~/.local-terminal/.mybash"
     echo "Copying git config..."
     cp -n ~/.local-terminal/.gitconfig ~/.gitconfig  # Use -n to avoid overwriting existing file
 fi

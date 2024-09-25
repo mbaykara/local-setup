@@ -73,8 +73,11 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 #########BASH HISTORY SETTINGS#########
 # Sourcing aliases
 source ${SCRIPT_DIR}/.aliases
-complete -o default -F __start_kubectl k
 # Setting PS1
+brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
+export LSCOLORS="BxBxCxCxDxegedabacaba"
+export DOCKER_HOST='unix:///var/folders/fb/hhsnfyfd0rbfmzn4cszjhf3w0000gn/T/podman/podman-machine-default-api.sock'
+eval "$(/opt/homebrew/bin/brew shellenv)"
 export PS1='\[$(tput setaf 34)\]\u \[$(tput setaf 154)\]\w \[\033[00m\]$(kube_ps1)$(parse_git_branch)\n~ '
 
 
